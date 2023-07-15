@@ -1,15 +1,12 @@
 import React from 'react';
 
-import TopNavigationBar from './components/TopNavigationBar';
-import PhotoList from './components/PhotoList';
 import './App.scss';
-
+import HomeRoute from './components/HomeRoute';
 
 // Note: Rendering a single component to build components in isolation
 const App = () => (
   <div className="App">
-    <TopNavigationBar />
-    <PhotoList/>
+    <HomeRoute/>
   </div>
 )
 
