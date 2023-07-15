@@ -8,12 +8,15 @@ const PhotoList = (props) => {
   const mappedPhotos = props.photos.map((photo, index) => {
     return <PhotoListItem
       key={photo.id}
+      id={photo.id}
       name={photo.user.name}
       username={photo.user.username}
       profile={photo.user.profile}
       imageSource={photo.urls.regular}
       city={photo.location.city}
       country={photo.location.country}
+      likes={props.likes}
+      setLikes={props.setLikes}
     />;
   });
 

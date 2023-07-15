@@ -9,7 +9,7 @@ const PhotoListItem = (props) => {
   /* Insert React */
   return (
     <div className="photo-list__item">
-      <PhotoFavButton />
+      <PhotoFavButton key={props.key} id={props.id} likes={props.likes} setLikes={props.setLikes}/>
       <img className="photo-list__image" src={props.imageSource}></img>
       <p className="photo-list__user-info photo-list__user-details"> {props.name}
       </p>
