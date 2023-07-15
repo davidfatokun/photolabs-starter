@@ -2,6 +2,8 @@
 import React from 'react';
 
 import '../styles/PhotoListItem.scss';
+import '../styles/PhotoFavButton.scss';
+import PhotoFavButton from './PhotoFavButton';
 
 const PhotoListItem = (props) => {
   /* Insert React */
@@ -9,12 +11,13 @@ const PhotoListItem = (props) => {
     <div className="photo-list__item">      
       <p className="photo-list__user-info photo-list__user-details"> {props.name}
       </p>
+      <PhotoFavButton/>
       <img className="photo-list__image" src={props.imageSource}></img>
       <p className="photo-list__user-location"> {props.city} {props.country}
       </p>
       <img className="photo-list__user-profile" src={props.profile}></img>
       <p className="photo-list__user-info photo-list__user-details"> {props.username}
-      </p>
+      </p>      
     </div>
   );
 }
