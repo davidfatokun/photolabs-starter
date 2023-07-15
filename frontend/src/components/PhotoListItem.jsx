@@ -8,28 +8,27 @@ import PhotoFavButton from './PhotoFavButton';
 const PhotoListItem = (props) => {
   /* Insert React */
   return (
-    <div className="photo-list__item">      
+    <div className="photo-list__item">
+      <PhotoFavButton />
+      <img className="photo-list__image" src={props.imageSource}></img>
       <p className="photo-list__user-info photo-list__user-details"> {props.name}
       </p>
-      <PhotoFavButton/>
-      <img className="photo-list__image" src={props.imageSource}></img>
+      <p className="photo-list__user-info photo-list__user-details"> {props.username}
+      </p>
       <p className="photo-list__user-location"> {props.city} {props.country}
       </p>
       <img className="photo-list__user-profile" src={props.profile}></img>
-      <p className="photo-list__user-info photo-list__user-details"> {props.username}
-      </p>      
     </div>
   );
 }
 
 PhotoListItem.defaultProps = {
   "id": "1",
-  "location": {
-    "city": "Montreal",
-    "country": "Canada"
-  },
+  "city": "Montreal",
+  "country": "Canada",
   "imageSource": `${process.env.PUBLIC_URL}/Image-1-Regular.jpeg`,
-  "username": "Joe Example",
+  "name": "Joe Example",
+  "username": "exampleuser",
   "profile": `${process.env.PUBLIC_URL}/profile-1.jpg`
 }
 
