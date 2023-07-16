@@ -6,13 +6,13 @@ import '../styles/HomeRoute.scss';
 import photos from '../mocks/photos';
 
 // Note: Rendering a single component to build components in isolation
-const HomeRoute = () => {
+const HomeRoute = (props) => {
   const [likes, setLikes] = useState([]);
   
   return (
     <div className="home-route">
       <TopNavigationBar likes={likes}/>
-      <PhotoList likes={likes} setLikes={setLikes} photos={photos}/>
+      <PhotoList likes={likes} setLikes={setLikes} photos={photos} showComponent={props.showComponent} setShowComponent={props.setShowComponent} />
     </div>
   );
 }

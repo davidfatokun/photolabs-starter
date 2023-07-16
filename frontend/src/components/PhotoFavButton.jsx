@@ -9,7 +9,13 @@ function PhotoFavButton(props) {
   const handleClick = () => {
     console.log('SVG clicked!');
     console.log(likes);
-    setLikes(prev => [...prev, props.id]);
+    setLikes(prev => {
+      if (!prev.includes(props.id)) {
+        return [...prev, props.id];
+      } else {
+        return prev;
+      }
+    });
     // setLikes([...likes, props.id]);
   };
   return (
