@@ -4,9 +4,12 @@ import '../styles/PhotoDetailsModal.scss'
 
 export const PhotoDetailsModal = (props) => {
   const setShowComponent = props.setShowComponent;
+  const setPhotoDetail = props.setPhotoDetail;
+  console.log(props.photoDetail[0]);
   const handleClick = () => {
     console.log('Photo Detail Pop Up Closed!');
     setShowComponent(false);
+    setPhotoDetail([]);
   };
   return (
     <div className='photo-details-modal'>

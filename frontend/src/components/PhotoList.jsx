@@ -17,6 +17,7 @@ const PhotoList = (props) => {
       country={photo.location.country}
       setLikes={props.setLikes}
       setShowComponent={props.setShowComponent}
+      setPhotoDetail={props.setPhotoDetail}
       photo={photo}
     />;
   });

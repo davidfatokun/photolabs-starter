@@ -7,12 +7,13 @@ import PhotoDetailsModal from './routes/PhotoDetailsModal';
 // Note: Rendering a single component to build components in isolation
 const App = () => {
   const [showComponent, setShowComponent] = useState(false);
+  const [photoDetail, setPhotoDetail] = useState([]);
   const [likes, setLikes] = useState([]);
 
   return (
     <div className="App">
-      <HomeRoute setShowComponent={setShowComponent} likes={likes} setLikes={setLikes}/>
-      {showComponent && <PhotoDetailsModal setShowComponent={setShowComponent}/>}
+      <HomeRoute setShowComponent={setShowComponent} setPhotoDetail={setPhotoDetail} likes={likes} setLikes={setLikes}/>
+      {showComponent && <PhotoDetailsModal photoDetail={photoDetail} setPhotoDetail={setPhotoDetail} setShowComponent={setShowComponent}/>}
     </div>
   );
 }
