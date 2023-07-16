@@ -11,8 +11,4 @@ export const FavBadge = ({ isFavPhotoExist }) => {
   ) 
 };
 
-FavBadge.defaultProps = {
-  isFavPhotoExist: false,
-}
-
 export default FavBadge;

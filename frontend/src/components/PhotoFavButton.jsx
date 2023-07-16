@@ -9,8 +9,8 @@ function PhotoFavButton(props) {
   const handleClick = () => {
     console.log('SVG clicked!');
     console.log(likes);
-    setLikes([...likes, props.id]);
-    console.log(likes);
+    setLikes(prev => [...prev, props.id]);
+    // setLikes([...likes, props.id]);
   };
   return (
     <div className="photo-list__fav-icon" onClick={handleClick}>

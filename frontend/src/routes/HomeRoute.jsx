@@ -11,7 +11,7 @@ const HomeRoute = () => {
   
   return (
     <div className="home-route">
-      <TopNavigationBar />
+      <TopNavigationBar likes={likes}/>
       <PhotoList likes={likes} setLikes={setLikes} photos={photos}/>
     </div>
   );
