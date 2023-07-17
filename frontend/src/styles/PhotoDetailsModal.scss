@@ -11,6 +11,11 @@
   border-radius: 12px;
 }
 
+.photo-details-modal.photo-details-modal__image.photo-list__item.photo-list__image {
+  width: 95%;
+  border-radius: 8px;
+}
+
 .photo-details-modal__close-button {
   background-color: white;
   border: none;
@@ -30,7 +35,8 @@
 }
 
 .photo-details-modal__image {
-  max-width: 95%;
+  margin-left: 36px;
+  width: 95%;
   border-radius: 8px;
 }
 
@@ -55,4 +61,8 @@
   margin-top: 24px;
   margin-bottom: 24px;
   width: 90%;
+}
+
+h3 {
+  margin-left: 36px;
 }

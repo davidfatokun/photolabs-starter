@@ -12,8 +12,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <HomeRoute showComponent={showComponent} setShowComponent={setShowComponent} setPhotoDetail={setPhotoDetail} likes={likes} setLikes={setLikes}/>
-      {showComponent && <PhotoDetailsModal photoDetail={photoDetail} setPhotoDetail={setPhotoDetail} setShowComponent={setShowComponent}/>}
+      <HomeRoute showComponent={showComponent} setShowComponent={setShowComponent} setPhotoDetail={setPhotoDetail} likes={likes} setLikes={setLikes} />
+      {showComponent && <PhotoDetailsModal photoDetail={photoDetail} setPhotoDetail={setPhotoDetail} setLikes={setLikes} showComponent={showComponent} setShowComponent={setShowComponent}/>}
     </div>
   );
 }

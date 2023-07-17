@@ -1,10 +1,13 @@
 import React from 'react';
 
-import '../styles/PhotoDetailsModal.scss'
+import '../styles/PhotoDetailsModal.scss';
+import PhotoList from '../components/PhotoList';
+import PhotoListItem from '../components/PhotoListItem';
 
 export const PhotoDetailsModal = (props) => {
   const setShowComponent = props.setShowComponent;
   const setPhotoDetail = props.setPhotoDetail;
+  const photoDetail = props.photoDetail[0];
   console.log(props.photoDetail[0]);
   const handleClick = () => {
     console.log('Photo Detail Pop Up Closed!');
@@ -26,6 +29,28 @@ export const PhotoDetailsModal = (props) => {
           </defs>
         </svg>
       </button>
+      <div className="photo-details-modal__image">
+        {<PhotoListItem
+          key={photoDetail.id}
+          id={photoDetail.id}
+          name={photoDetail.user.name}
+          username={photoDetail.user.username}
+          profile={photoDetail.user.profile}
+          imageSource={photoDetail.urls.regular}
+          city={photoDetail.location.city}
+          country={photoDetail.location.country}
+          setLikes={props.setLikes}
+          showComponent={props.showComponent}
+          setShowComponent={props.setShowComponent}
+          setPhotoDetail={props.setPhotoDetail}
+          photo={photoDetail}
+        />}
+      </div>
+      <h3>Similar Photos</h3>
+      <div className="photo-details-modal__images">
+        <PhotoList setLikes={props.setLikes} photos={photoDetail.similar_photos} showComponent={props.showComponent} setShowComponent={props.setShowComponent} setPhotoDetail={props.setPhotoDetail} />
+      </div>
+
     </div>
   );
 }
