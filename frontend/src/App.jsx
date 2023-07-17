@@ -12,7 +12,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <HomeRoute setShowComponent={setShowComponent} setPhotoDetail={setPhotoDetail} likes={likes} setLikes={setLikes}/>
+      <HomeRoute showComponent={showComponent} setShowComponent={setShowComponent} setPhotoDetail={setPhotoDetail} likes={likes} setLikes={setLikes}/>
       {showComponent && <PhotoDetailsModal photoDetail={photoDetail} setPhotoDetail={setPhotoDetail} setShowComponent={setShowComponent}/>}
     </div>
   );

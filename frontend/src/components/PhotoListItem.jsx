@@ -7,17 +7,20 @@ import PhotoFavButton from './PhotoFavButton';
 
 const PhotoListItem = (props) => {
   /* Insert React */
+  const showComponent = props.showComponent;
   const setShowComponent = props.setShowComponent;
   const setPhotoDetail = props.setPhotoDetail;
   const photo = props.photo;
   const handleClick = () => {
     console.log('Photo Item clicked!');
-    setShowComponent(true);
-    setPhotoDetail([photo])
+    if (!showComponent) {
+      setShowComponent(true);
+      setPhotoDetail([photo])
+    }
   };
   return (
     <div className="photo-list__item"  >
-      <PhotoFavButton setLikes={props.setLikes} photo={photo}/>
+      <PhotoFavButton setLikes={props.setLikes} photo={photo} />
       <img className="photo-list__image" src={props.imageSource} onClick={handleClick}></img>
       <p className="photo-list__user-info photo-list__user-details"> {props.name}
       </p>

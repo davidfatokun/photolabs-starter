@@ -16,6 +16,7 @@ const PhotoList = (props) => {
       city={photo.location.city}
       country={photo.location.country}
       setLikes={props.setLikes}
+      showComponent={props.showComponent}
       setShowComponent={props.setShowComponent}
       setPhotoDetail={props.setPhotoDetail}
       photo={photo}
