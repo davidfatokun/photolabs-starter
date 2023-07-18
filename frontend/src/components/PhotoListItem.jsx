@@ -1,5 +1,5 @@
 
-import React from 'react';
+import {React, useState} from 'react';
 
 import '../styles/PhotoListItem.scss';
 import '../styles/PhotoFavButton.scss';
@@ -17,18 +17,20 @@ const PhotoListItem = (props) => {
       setShowComponent(true);
       setPhotoDetail([photo])
     }
-  };
+  };  
   return (
     <div className="photo-list__item"  >
-      <PhotoFavButton setLikes={props.setLikes} photo={photo} />
+      <PhotoFavButton id={props.id} likes={props.likes} setLikes={props.setLikes} photo={photo} />
       <img className="photo-list__image" src={props.imageSource} onClick={handleClick}></img>
-      <p className="photo-list__user-info photo-list__user-details"> {props.name}
-      </p>
-      <p className="photo-list__user-info photo-list__user-details"> {props.username}
-      </p>
-      <p className="photo-list__user-location"> {props.city} {props.country}
-      </p>
-      <img className="photo-list__user-profile" src={props.profile}></img>
+      <div className="photo-list__user-details">
+        <img className="photo-list__user-profile" src={props.profile}></img>
+        <div className="photo-list__user-info">
+          <p className="photo-list__user-profile-name"> {props.name}
+          </p>
+          <p className="photo-list__user-location"> {props.city}, {props.country}
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
