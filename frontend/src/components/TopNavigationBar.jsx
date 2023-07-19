@@ -1,13 +1,16 @@
 import React, { useEffect } from 'react';
+import axios from 'axios';
 
 import '../styles/TopNavigationBar.scss'
 import FavBadge from './FavBadge';
 import TopicList from './TopicList';
-import topics from '../mocks/topics';
 import { ACTIONS } from '../hooks/useApplicationData';
 
 const TopNavigation = (props) => {
-  useEffect(() => props.dispatch({ type: ACTIONS.SET_TOPIC_DATA, payload: { topics }} ), []);
+  useEffect(() => {
+    axios.get('/api/topics')
+      .then((res) => props.dispatch({ type: ACTIONS.SET_TOPIC_DATA, payload: { topics: res.data } }))
+  }, [])
   let isFavPhotoExist = false;
   if (props.state.likes.length > 0) {
     isFavPhotoExist = true;
