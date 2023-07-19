@@ -9,7 +9,6 @@ import { ACTIONS } from '../hooks/useApplicationData';
 const PhotoListItem = (props) => {
   /* Insert React */
   const handleClick = () => {
-    console.log('Photo Item clicked!');
     if(!props.state.showComponent){
       props.dispatch({ type: ACTIONS.DISPLAY_PHOTO_DETAILS, payload: { id: props.photo.id }}); 
     } 

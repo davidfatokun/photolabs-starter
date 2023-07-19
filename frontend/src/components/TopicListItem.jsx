@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 import '../styles/TopicListItem.scss'
@@ -7,11 +7,16 @@ import { ACTIONS } from '../hooks/useApplicationData';
 const TopicListItem = (props) => {
   const [clicked, setClicked] = useState(false);
   const handleClick = () => {
-    setClicked(true);
+    setClicked(prev => !prev);
   };
   useEffect(() => {
-    axios.get(`/api/topics/photos/${props.topic.id}`)
+    if (clicked) {
+      axios.get(`/api/topics/photos/${props.topic.id}`)
+        .then((res) => props.dispatch({ type: ACTIONS.SET_PHOTO_DATA, payload: { photos: res.data } }))
+    } else {
+      axios.get('/api/photos')
       .then((res) => props.dispatch({ type: ACTIONS.SET_PHOTO_DATA, payload: { photos: res.data } }))
+    }
   }, [clicked]);
   return (
     <div className="topic-list__item" onClick={handleClick}>

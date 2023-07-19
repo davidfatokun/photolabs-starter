@@ -12,7 +12,6 @@ function PhotoFavButton(props) {
     fill = "#C80000";
   }
   const handleClick = () => {
-    console.log('Photo Fav Button clicked!');
     if (displayAlert || fill === "#C80000") {
       props.dispatch({ type: ACTIONS.FAV_PHOTO_REMOVED, payload: { id: props.id } });
       displayAlert = false;

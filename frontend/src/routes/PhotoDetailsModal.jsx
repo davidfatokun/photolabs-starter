@@ -9,7 +9,6 @@ import { ACTIONS } from '../hooks/useApplicationData';
 export const PhotoDetailsModal = (props) => {
   const photoDetail = props.state.photoDetail[0];
   const handleClick = () => {
-    console.log('Photo Detail Pop Up Closed!');
     props.dispatch({ type: ACTIONS.REMOVE_PHOTO_DETAILS}); 
   };
   return (
