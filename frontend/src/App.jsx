@@ -7,18 +7,11 @@ import { useApplicationData } from './hooks/useApplicationData';
 
 // Note: Rendering a single component to build components in isolation
 const App = () => {
-  const {
-    showComponent,
-    setShowComponent,
-    photoDetail, 
-    setPhotoDetail, 
-    likes, 
-    setLikes} = {...useApplicationData()};
-
+  const [state, dispatch] = useApplicationData();
   return (
     <div className="App">
-      <HomeRoute showComponent={showComponent} setShowComponent={setShowComponent} setPhotoDetail={setPhotoDetail} likes={likes} setLikes={setLikes} />
-      {showComponent && <PhotoDetailsModal photoDetail={photoDetail} setPhotoDetail={setPhotoDetail} likes={likes} setLikes={setLikes} showComponent={showComponent} setShowComponent={setShowComponent} />}
+      <HomeRoute likes={state.likes} topics={state.topics} photos={state.photos} state={state} dispatch={dispatch}/>
+      {state.showComponent && <PhotoDetailsModal state={state} dispatch={dispatch}/>}
     </div>
   );
 }

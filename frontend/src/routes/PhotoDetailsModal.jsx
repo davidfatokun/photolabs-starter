@@ -2,19 +2,15 @@ import React from 'react';
 
 import '../styles/PhotoDetailsModal.scss';
 import PhotoList from '../components/PhotoList';
-
 import '../styles/PhotoListItem.scss';
 import PhotoFavButton from '../components/PhotoFavButton';
+import { ACTIONS } from '../hooks/useApplicationData';
 
 export const PhotoDetailsModal = (props) => {
-  const setShowComponent = props.setShowComponent;
-  const setPhotoDetail = props.setPhotoDetail;
-  const photoDetail = props.photoDetail[0];
-  console.log(photoDetail);
+  const photoDetail = props.state.photoDetail[0];
   const handleClick = () => {
     console.log('Photo Detail Pop Up Closed!');
-    setShowComponent(false);
-    setPhotoDetail([]);
+    props.dispatch({ type: ACTIONS.REMOVE_PHOTO_DETAILS}); 
   };
   return (
     <div className='photo-details-modal'>
@@ -32,7 +28,7 @@ export const PhotoDetailsModal = (props) => {
         </svg>
       </button>
       <div className="photo-details-modal__image">
-        <PhotoFavButton id={photoDetail.id} likes={props.likes} setLikes={props.setLikes} photo={photoDetail} />
+        <PhotoFavButton id={photoDetail.id} state={props.state} dispatch={props.dispatch}/>
         <img className="photo-details-modal__photo" src={photoDetail.urls.full}></img>
         <div className="photo-list__user-details">
           <img className="photo-list__user-profile" src={photoDetail.user.profile}></img>
@@ -47,7 +43,7 @@ export const PhotoDetailsModal = (props) => {
       <hr></hr>
       <h3>Related Photos</h3>
       <div className="photo-details-modal__images">
-        <PhotoList likes={props.likes} setLikes={props.setLikes} photos={photoDetail.similar_photos} showComponent={props.showComponent} setShowComponent={setShowComponent} setPhotoDetail={setPhotoDetail} />
+        <PhotoList photos={photoDetail.similar_photos} state={props.state} dispatch={props.dispatch}/>
       </div>
     </div>
   );

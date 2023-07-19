@@ -2,14 +2,12 @@ import React from 'react';
 
 import '../styles/TopicList.scss';
 import TopicListItem from './TopicListItem';
-import topics from '../mocks/topics';
 
 const TopicList = (props) => {
   const mappedTopics = props.topics.map((topic, index) => {
     return <TopicListItem
       key={topic.id}
-      slug={topic.slug}
-      title={topic.title}
+      topic={topic}
     />;
   });
 
@@ -20,7 +18,4 @@ const TopicList = (props) => {
   );
 }
 
-TopicList.defaultProps = {
-  topics: topics
-}
 export default TopicList
