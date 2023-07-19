@@ -10,7 +10,7 @@ const App = () => {
   const [state, dispatch] = useApplicationData();
   return (
     <div className="App">
-      <HomeRoute likes={state.likes} topics={state.topics} photos={state.photos} state={state} dispatch={dispatch}/>
+      <HomeRoute state={state} dispatch={dispatch}/>
       {state.showComponent && <PhotoDetailsModal state={state} dispatch={dispatch}/>}
     </div>
   );

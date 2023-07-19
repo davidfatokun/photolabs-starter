@@ -8,8 +8,8 @@ import '../styles/HomeRoute.scss';
 const HomeRoute = (props) => {  
   return (
     <div className="home-route">
-      <TopNavigationBar likes={props.likes} topics={props.topics}/>
-      <PhotoList photos={props.photos} state={props.state} dispatch={props.dispatch}/>
+      <TopNavigationBar state={props.state}/>
+      <PhotoList photos={props.state.photos} state={props.state} dispatch={props.dispatch}/>
     </div>
   );
 }

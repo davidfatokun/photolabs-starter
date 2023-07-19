@@ -6,13 +6,13 @@ import TopicList from './TopicList';
 
 const TopNavigation = (props) => {
   let isFavPhotoExist = false;
-  if (props.likes.length > 0) { 
+  if (props.state.likes.length > 0) { 
     isFavPhotoExist = true;
   }
   return (
     <div className="top-nav-bar">
       <span className="top-nav-bar__logo">PhotoLabs</span>
-      <TopicList topics={props.topics}/>
+      <TopicList state={props.state}/>
       <FavBadge isFavPhotoExist={isFavPhotoExist} />
     </div>
   )
