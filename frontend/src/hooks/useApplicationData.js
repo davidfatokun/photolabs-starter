@@ -1,13 +1,11 @@
 import { React, useState, useReducer } from 'react';
-import photos from '../mocks/photos';
-import topics from '../mocks/topics';
 
 const initialState = {
   showComponent: false,
   photoDetail: [],
   likes: [],
-  photos,
-  topics
+  photos: [],
+  topics: []
 };
 export const ACTIONS = {
   FAV_PHOTO_ADDED: 'FAV_PHOTO_ADDED',
