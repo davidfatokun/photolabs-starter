@@ -8,6 +8,7 @@ const TopicList = (props) => {
     return <TopicListItem
       key={topic.id}
       topic={topic}
+      state={props.state}
       dispatch={props.dispatch}
     />;
   });

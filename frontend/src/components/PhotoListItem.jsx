@@ -1,5 +1,5 @@
 
-import {React, useState} from 'react';
+import {React} from 'react';
 
 import '../styles/PhotoListItem.scss';
 import '../styles/PhotoFavButton.scss';
@@ -7,7 +7,6 @@ import PhotoFavButton from './PhotoFavButton';
 import { ACTIONS } from '../hooks/useApplicationData';
 
 const PhotoListItem = (props) => {
-  /* Insert React */
   const handleClick = () => {
     if(!props.state.showComponent){
       props.dispatch({ type: ACTIONS.DISPLAY_PHOTO_DETAILS, payload: { id: props.photo.id }}); 
