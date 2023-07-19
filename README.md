@@ -22,3 +22,13 @@ Read `backend/readme` for further setup details.
 cd backend
 npm start
 ```
+## Final Project
+
+!["Screenshot of main page view"](https://github.com/davidfatokun/photolabs-starter
+/blob/main/docs/main-page-view.png)
+!["Screenshot of photo like(s)"](https://github.com/davidfatokun/photolabs-starter
+/blob/main/docs/photo-likes-view.png)
+!["Screenshot of photo select"](https://github.com/davidfatokun/photolabs-starter
+/blob/main/docs/photo-select-view.png)
+!["Screenshot of topic select"](https://github.com/davidfatokun/photolabs-starter
+/blob/main/docs/topic-select-view.png)
